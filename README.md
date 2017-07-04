@@ -19,6 +19,13 @@ The task can also produce a mask for selected classes, where pixels correspondin
 
 No data zones in the input image are colored black in the output image.
 
+Here is an example of the rgb output and the corresponding unclassified mask.
+
+<img src='./images/rgb.png'>  
+
+<img src='./images/unclassified_mask.png'>  
+
+
 **Comments**
 
 + Shadows may be misinterpreted as water.
