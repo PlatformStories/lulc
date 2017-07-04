@@ -1,0 +1,81 @@
+{
+    "name": "lulc",
+    "description": "A GBDX task that performs unsupervised land use land cover classification. here are six classes: vegetation, water, bare soil, clouds, shadows and unclassified.",
+    "properties": {
+        "isPublic": true,
+        "timeout": 7200
+    },
+    "version": "0.0.2",
+    "inputPortDescriptors": [
+        {
+            "name": "image",
+            "type": "directory",
+            "description": "Contains input image. The input image must be a WV02/WV03 multispectral image which is atmospherically compensated. If more than one images are contained in this directory, one is picked arbitrarily.",
+            "required": true
+        },
+        {
+            "name": "vegetation",
+            "type": "string",
+            "description": "If True, the output is a vegetation mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "water",
+            "type": "string",
+            "description": "If True, the output is a water mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "soil",
+            "type": "soil",
+            "description": "If True, the output is a bare soil mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "clouds",
+            "type": "string",
+            "description": "If True, the output is a cloud mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "shadows",
+            "type": "string",
+            "description": "If True, the output is a shadow mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "unclassified",
+            "type": "string",
+            "description": "If True, the output is an unclassified material mask. Default is False.",
+            "required": false
+        },
+        {
+            "name": "tiles",
+            "type": "string",
+            "description": "Number of tiles to tile input image into if it is too big. In that case, the recommended number is 2. Only use this if the default option fails. Default is 1.",
+            "required": false
+        },
+        {
+            "name": "verbose",
+            "type": "string",
+            "description": "If True, save algorithm config files in output directory. To be used for debugging purposes. Default is False.",
+            "required": false
+        }
+    ],
+    "outputPortDescriptors": [
+        {
+            "name": "image",
+            "type": "directory",
+            "description": "Contains output image."
+        }
+    ],
+    "containerDescriptors": [
+        {
+            "type": "DOCKER",
+            "properties": {
+                "image": "tdgp/lulc"
+            },
+            "command": "python /lulc.py"
+        }
+    ]
+}
