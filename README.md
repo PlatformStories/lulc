@@ -43,6 +43,8 @@ In a Python terminal:
 ```python
 import gbdxtools
 
+gbdx = gbdxtools.Interface()
+
 lulc = gbdx.Task('lulc')
 lulc.inputs.image = 's3://gbd-customer-data/58600248-2927-4523-b44b-5fec3d278c09/platform-stories/coastal-change/images/pre'
 
