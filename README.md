@@ -9,7 +9,7 @@ By default, the task produces an RGB image where each class is color coded.
 Class     | Color               | Description
 --------------|--------------------|------------
 vegetation    | green [0,255,0]                    | All types of vegetation (healthy chlorophyll content)
-water         | blue [0,0,128]                     | All types of water, including murky/impure wate
+water         | blue [0,0,128]                     | All types of water, including murky/impure water
 bare soil     | brown [128,64,0]                   | All types of soils, excluding rocks and stone
 clouds        | light blue [128,255,255]           | All types of clouds excluding smoke
 shadows       | purple [164,74,164]                | Shadows
