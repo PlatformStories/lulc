@@ -81,6 +81,7 @@ else:
     rgb = True
     tiles = 1
     verbose = False
+    bbox = ''
 
 # Create output directory
 output_dir = os.path.join(output_ports_location, 'image')
