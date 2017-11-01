@@ -67,6 +67,7 @@ wf.execute()
 | unclassified | String | If True, the output is an unclassified material mask. Default is False. | False |
 | tiles | String | Number of tiles to tile input image into if it is too big. In that case, the recommended number is 2. Only use this if the default option fails. Default is 1. | False |
 | verbose | String | If True, save algorithm config files in output directory. To be used for debugging purposes. Default is False. | False |
+| bbox | String | Bounding box coordinates in lat/long. The format is 'W,S,E,N'. Default is None (entire input image). | False |
 
 Note that if more than one class is set to True, the corresponding mask includes all the classes set to True.
 

@@ -9,7 +9,7 @@ output_ports_location = '/mnt/work/output/'
 image_dir = os.path.join(input_ports_location, 'image')
 
 # Point to image file. If there are multiple tif's in multiple subdirectories, pick one.
-image = [os.path.join(dp, f) for dp, dn, fn in os.walk(image_dir) for f in fn if 'tif' in f][0]
+image = [os.path.join(dp, f) for dp, dn, fn in os.walk(image_dir) for f in fn if ('tif' in f) or ('TIF' in f)][0]
 
 # Read from ports.json
 input_ports_path = os.path.join(input_ports_location, 'ports.json')
@@ -28,8 +28,12 @@ if string_ports:
     unclassified = string_ports.get('unclassified', 'false')
     tiles = string_ports.get('tiles', '1')
     verbose = string_ports.get('verbose', 'false')
+    bbox = string_ports.get('bbox', '')
 
     tiles = int(tiles)
+
+    if bbox:
+        bbox = map(float, bbox.split(','))
 
     if vegetation in ['true', 'True']:
         vegetation = True
@@ -109,6 +113,11 @@ p.image_config.bands = range(1, 9)
 if tiles > 1:
     p.image_config.number_of_tiles = tiles
     p.image_config.mosaic_method = 'max'
+
+# bbox if provided
+if bbox:
+    W, S, E, N = bbox
+    p.image_config.input_latlong_rectangle = [W, N, E, S]
 
 # Execute
 p.verbose = verbose

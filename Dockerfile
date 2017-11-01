@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:jessie
 MAINTAINER Kostas Stamatiou <kostas.stamatiou@digitalglobe.com>
 
 RUN apt-get update && apt-get install -y \

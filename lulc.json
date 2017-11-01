@@ -5,7 +5,7 @@
         "isPublic": true,
         "timeout": 7200
     },
-    "version": "0.0.2",
+    "version": "0.0.3",
     "inputPortDescriptors": [
         {
             "name": "image",
@@ -59,6 +59,12 @@
             "name": "verbose",
             "type": "string",
             "description": "If True, save algorithm config files in output directory. To be used for debugging purposes. Default is False.",
+            "required": false
+        },
+        {
+            "name": "bbox",
+            "type": "string",
+            "description": "Bounding box coordinates in lat/long. The format is 'W,S,E,N'. Default is None (entire input image).",
             "required": false
         }
     ],
