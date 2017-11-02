@@ -113,7 +113,7 @@ Then, within the container:
 python /lulc.py
 ```
 
-Confirm that the output image is under `/mnt/work/output/output`.
+Confirm that the output image is under `/mnt/work/output/image`.
 
 ### Docker Hub
 
