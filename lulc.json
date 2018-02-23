@@ -6,6 +6,7 @@
         "timeout": 7200
     },
     "version": "0.0.4",
+    "taskOwnerEmail": "kostas.stamatiou@digitalglobe.com",
     "inputPortDescriptors": [
         {
             "name": "image",
