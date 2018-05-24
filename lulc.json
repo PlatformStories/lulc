@@ -28,7 +28,7 @@
         },
         {
             "name": "soil",
-            "type": "soil",
+            "type": "string",
             "description": "If True, the output is a bare soil mask. Default is False.",
             "required": false
         },
